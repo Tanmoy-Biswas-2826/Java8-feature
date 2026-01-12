@@ -29,7 +29,7 @@ public class LambdaDemo {
         List<String> list = List.of("Java", "Spring", "Angular");
         list.forEach(s -> System.out.println(s));
         list.forEach(System.out::println); //Use Method reference
-        
+
     }
 }
 
