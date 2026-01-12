@@ -12,6 +12,7 @@ public class ConsumerDemo {
         */
 
         // Consumer
+        
 
         Consumer<Integer> print = x -> System.out.println("Print Input :: "+ x);
         print.accept(10);
