@@ -107,6 +107,26 @@ public class StreamDemo {
                 System.out.println(sentence.chars().filter(x -> x == 'l').count());
 
 
+        /* Stateless and Stateful */
+
+        /*
+            A lambda is stateless  when its does not depend on or change any external variable.
+                list.stream()
+                    .map(x -> x * 2)
+                    .forEach(System.out::println);
+            - There each element processed independently
+            - No memory for prev element
+        */
+
+        /*
+            A lambda is stateful if it is uses or modified external variables.
+
+             List<Integer> result = new ArrayList<>();
+             list.stream().forEach(x -> result.add(x));
+
+             - dippend on prev result so not independently excecute.
+
+        */
 
     }
 }
