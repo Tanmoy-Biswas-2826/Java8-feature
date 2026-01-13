@@ -8,6 +8,7 @@ public class StreamDemo {
         /*
             - a sequence of elements supporting functional and declarative programing
             -> Source, Intermediate, operations and terminal operations.
+            
         */
 
         List<Integer> numbers = Arrays.asList(1,2,3,4,5,6);
