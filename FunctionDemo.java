@@ -1,4 +1,7 @@
-import java.util.function.Function;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.ForkJoinWorkerThread;
+import java.util.function.*;
 
 public class FunctionDemo {
     public static void main(String[] args) {
@@ -26,5 +29,31 @@ public class FunctionDemo {
         Function<Integer, Integer> identity = Function.identity();
         Integer res2 = identity.apply(5);
         System.out.println(res2); // Return same thing that i pass
+
+        /* BiFunction */
+
+        BiFunction<String,String,Integer> biFunction = (x,y) -> (x+y).length();
+        System.out.println(biFunction.apply("Hello","World")); // return combine lenght of this two string.
+
+        /* UnaryOperator and BinaryOperator */
+        UnaryOperator<Integer> a = x -> 2 * x; // use replace of function
+        BinaryOperator<Integer> b = (x,y) -> x + y; // use replace of biFunction
+
+        /* Method Reference */
+        List<String > li = Arrays.asList("Ram","Shyam","Jam");
+        li.forEach(System.out::println);
+
+        /* Constructor Reference
+            instead of : () -> new Employee()
+            write : Employee :: new
+         */
+
+//        Supplier<Employee> emp = Employee :: new;
+//        Employee e = emp.get();
+
+
+
+
+
     }
 }

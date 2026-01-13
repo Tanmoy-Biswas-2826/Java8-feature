@@ -1,5 +1,6 @@
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class ConsumerDemo {
@@ -26,6 +27,15 @@ public class ConsumerDemo {
         };
 
         listConsumer.accept(lis);
+
+        /* BiConsumer */
+
+        BiConsumer<Integer, String> biConsumer = (x,y) -> {
+            System.out.println(x);
+            System.out.println(y);
+        };
+
+        biConsumer.accept(5,"Hello");
 
     }
 }

@@ -1,3 +1,4 @@
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 public class PedicateDemo {
@@ -24,6 +25,12 @@ public class PedicateDemo {
         // Combine two predicate and create a new predicate
         Predicate<String> and =  isStart.and(isEnd);
         System.out.println(and.test("Alantu"));
+
+        /* BiPredicate */
+        //Its take two argument for boolena check
+        BiPredicate<Integer, Integer> biPredicate = (x,y) -> (x + y) % 2 ==0;
+        System.out.println(biPredicate.test(5,5));
+
 
     }
 }
