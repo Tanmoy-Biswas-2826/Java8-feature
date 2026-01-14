@@ -1,8 +1,5 @@
 import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.SortedMap;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -58,6 +55,10 @@ public class StreamDemo {
                 //6. Skip
                 System.out.println(Stream.iterate(1, x->x+1).skip(5).limit(10).toList());
 
+                //7. peek
+                // Perform an action on each element as it is consumed.
+                Stream.iterate(1,x -> x + 1).skip(10).limit(100).peek(System.out::println).collect(Collectors.toList());
+
 
         /* Terminal Operation */
 
@@ -89,6 +90,14 @@ public class StreamDemo {
             // 6. findMatch, findAny
                 System.out.println(li.stream().findFirst().get());
                 System.out.println(li.stream().findAny().get());
+
+            // 7. toArray()
+                Object[] array = Stream.of(1,2,3,4).toArray(); // stream convert in array
+
+            // 8. min / max
+                System.out.println("max: "+ Stream.of(2,44,69).max(Comparator.naturalOrder())); // return max
+                System.out.println("min: " + Stream.of(2,44,69).min(Comparator.naturalOrder())); // return min
+
 
                 //Example :: Filtering and Collecting Names
                 List<String> names = Arrays.asList("Anna","Bob","Charlie","David");
