@@ -92,7 +92,7 @@ public class StreamDemo {
                 System.out.println(li.stream().findAny().get());
 
             // 7. toArray()
-                Object[] array = Stream.of(1,2,3,4).toArray(); // stream convert in array
+                Object[] array1 = Stream.of(1,2,3,4).toArray(); // stream convert in array
 
             // 8. min / max
                 System.out.println("max: "+ Stream.of(2,44,69).max(Comparator.naturalOrder())); // return max
