@@ -60,7 +60,7 @@ public class CollectorsDemo{
         //Applies a mapping function before collecting
         System.out.println(words.stream().collect(Collectors.mapping(x -> x.toUpperCase(), Collectors.toList())));
 
-        // 11. ToMap Use
+        // 11. ToMap Use .
         List<String> fruit = Arrays.asList("Apple","Banana", "Cherry");
         System.out.println(fruit.stream().collect(Collectors.toMap(x->x.toUpperCase(), x->x.length()))); // create map with key value pair with word length
 
