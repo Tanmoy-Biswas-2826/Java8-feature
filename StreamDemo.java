@@ -59,6 +59,46 @@ public class StreamDemo {
                 // Perform an action on each element as it is consumed.
                 Stream.iterate(1,x -> x + 1).skip(10).limit(100).peek(System.out::println).collect(Collectors.toList());
 
+                // 8. FlatMap()
+                /*
+                 flatMap() is a Stream operation used to flatten nested structures (streams, lists, arrays) into one single stream.
+                     ------->
+                     map() → transforms
+                     flatMap() → transforms and flattens
+
+
+                */
+
+                    List<List<String>> list2 = List.of(
+                            List.of("A", "B"),
+                            List.of("C", "D")
+                    );
+                    list2.stream()
+                            .flatMap(l -> l.stream())
+                            .forEach(System.out::println);
+
+                    // Split String in to word
+                        List<String> sentences = List.of("hello world", "java streams");
+
+                        List<String> words = sentences.stream()
+                                .flatMap(s -> Arrays.stream(s.split(" ")))
+                                .toList();
+
+                     // Remove duplicate
+                        List<List<Integer>> nums = List.of(
+                                List.of(1, 2),
+                                List.of(2, 3)
+                        );
+
+                        nums.stream()
+                                .flatMap(List::stream)
+                                .distinct()
+                                .forEach(System.out::println);
+
+
+
+                        
+
 
         /* Terminal Operation */
 
